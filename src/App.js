@@ -3,8 +3,12 @@ import './App.css';
 
 function App() {
 
-  const reqApi = () => {
-    console.log('clicked');
+  const reqApi = async () => {
+    // realizando la solicitud HTTP
+    const api = await fetch('https://rickandmortyapi.com/api/character');
+    // convirtiendo el objeto json a objeto javascrit
+    const characterApi = await api.json();
+    console.log(characterApi);
   }
   return (
     <div className="App">
