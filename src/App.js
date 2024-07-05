@@ -1,15 +1,18 @@
 import imgRickMorty from './img/rick-morty.png';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+function App() {  
+  const [characters, setCharacters] = useState(null);
 
   const reqApi = async () => {
-    // realizando la solicitud HTTP
     const api = await fetch('https://rickandmortyapi.com/api/character');
-    // convirtiendo el objeto json a objeto javascrit
     const characterApi = await api.json();
-    console.log(characterApi);
+    setCharacters(characterApi.results);
   }
+
+  console.log(characters);
+
   return (
     <div className="App">
       <header className="App-header">
