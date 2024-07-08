@@ -18,7 +18,7 @@ function App() {
         <h1 className='title'>Rick & Morty</h1>
         {/* 1. Si hay characters renderiza el componente Characters, caso contrario el JSX */}
         {characters ? (
-          <Characters characters = {characters}/>
+          <Characters characters = {characters} setCharacters = {setCharacters}/>
         ) : (
           // 2. Encapsulando este JSX en un fragment para que pueda ser renderizado
           <>
